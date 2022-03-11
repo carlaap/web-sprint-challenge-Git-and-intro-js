@@ -232,7 +232,7 @@ Use getArtistByIndex to do the following:
 
 function getArtistByIndex(array, number) {
   return `the artist at index ${array[number].id} is ${array[number].name}`;
-}
+};
 
 console.log('task 3:', getArtistByIndex(artists, 0))
 
@@ -328,7 +328,8 @@ Use artistByCountry to do the following:
 🌟 EXAMPLE: Invoking artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-function artistByCountry(/*Your Code Here*/){
+function artistByCountry(array, nationality){
+  
   /*Your Code Here*/
 }
 
