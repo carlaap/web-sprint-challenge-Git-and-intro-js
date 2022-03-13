@@ -258,15 +258,14 @@ Use removeArtist to do the following:
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
 function removeArtist(arr, idx) {
-  let newArr = arr.filter((value, index)=>{
-    if(index !== idx){
-      return value
+  let newArr = arr.filter((value, index) => {
+    if (index !== idx) {
+      return value;
     }
-  })
-  return newArr
+  });
+  return newArr;
 }
-console.log(removeArtist(artists, artists.length-1))
-
+console.log(removeArtist(artists, artists.length - 1));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -292,10 +291,19 @@ function addArtist(arr, newName, newYears, newGenre, newNationality, newBio) {
     nationality: newNationality,
     bio: newBio,
   };
-arr.push(newObj)
-  return arr
+  arr.push(newObj);
+  return arr;
 }
-console.log(addArtist(artists, "Carla", "1993-2022", "Web Design", "Hispanic", "I attend BloomTech"))
+console.log(
+  addArtist(
+    artists,
+    "Carla",
+    "1993-2022",
+    "Web Design",
+    "Hispanic",
+    "I attend BloomTech"
+  )
+);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
@@ -305,9 +313,17 @@ Use lotsOfArt to do the following:
 🌟 EXAMPLE: lotsOfArt(artists) will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
 */
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(arr) {
+  let newArr = [ ]
+  arr.forEach((artists) => {
+    if (artists.paintings >= 100) {
+      newArr.push(artists.name)
+    }
+  });
+  return newArr;
 }
+
+console.log(lotsOfArt(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistInfo to do the following: 
@@ -319,9 +335,20 @@ Use artistInfo to do the following:
   "Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."
 */
 
-function artistInfo(/*Your Code Here*/) {
-  /*Your Code Here*/
+function artistInfo(arr, name) {
+  let newArr 
+  arr.forEach(value => {
+    if(value.name === name)
+      newArr = value.bio
+  })
+    
+  
+return newArr;
 }
+
+console.log(artistInfo(artists, 'Frida Kahlo'));
+
+//console.log(artistInfo);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistByCountry to do the following: 
@@ -332,9 +359,15 @@ Use artistByCountry to do the following:
 🌟 EXAMPLE: Invoking artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-function artistByCountry(array, nationality) {
-  /*Your Code Here*/
+function artistByCountry(arr, nationality) {
+  let newArr = []
+  arr.forEach(value => {
+    if(value.nationality === nationality)
+  newArr.push(value.name)
+  })
+  return newArr
 }
+//onsole.log(artistByCountry(artists, 'Spanish'))
 
 /* ***** END OF TASKS ***** */
 
